@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+.login .loginbtn input {
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ca5fc', endColorstr='#1085fa', GradientType=0 );
+	behavior: url(PIE.htc);
+*line-height:12px;
+}
+.head-div {
+	behavior: url(PIE.htc);
+	position: relative;
+}
+.mean-container .mean-nav ul li li a {
+	filter: alpha(opacity=75);
+}
+.image-shadow img, .UserAccount li div, .UploadImage {
+	behavior: url(PIE.htc);
+	position: relative;
+}
+li.media i {
+	behavior: url(PIE.htc);
+	position: relative;
+}
+a.tooltips span {
+ *top:24px;
+}
+.image-list li i, .SampleVideo i, .video a i, .play-icon i {
+	behavior: url(PIE.htc);
+	background: #3d3d3d;
+	border: 5px solid #a1a1a1;
+}
+:root .image-list li i, :root .SampleVideo i, :root .video a i, :root .play-icon i {
+	background: rgba(0, 0, 0, 0.5);
+	border: 5px solid rgba(255, 255, 255, 0.5)
+}
+:root .video a:hover i, :root .play-icon a:hover i {
+	background: #21c1fc;
+}
+.button1, .InputButton {
+	behavior: url(PIE.htc);
+	position: relative;
+}
+footer .subscribe input {
+ *float:none;
+}
+.settings ul li input {
+ *margin-top:-5px;
+}
+input.hide {
+	position: absolute;
+	-moz-opacity: 0;
+ filter:alpha(opacity=0);
+	opacity: 0;
+	z-index: 2;
+	border-width: 0px;
+}
+.BoxesDiv i {
+	behavior: url(PIE.htc);
+	position: relative;
+}
+.FooterArea section {
+ *margin-left: 8%;
+}
+.FooterArea .column4 {
+ *width: 25%;
+}

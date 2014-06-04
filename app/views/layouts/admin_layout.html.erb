@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Dashboard - Dcards</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tag %>
+
+<%=favicon_link_tag("favicon.ico")%>
+
+</head>
+<body class="skin-black"> 
+<!-- BEGIN Navbar -->
+<div id="navbar" class="navbar">
+  <button type="button" class="navbar-toggle navbar-btn collapsed" data-toggle="collapse" data-target="#sidebar"> <span class="icon-reorder"></span> </button>
+  <div class="col-sm-3 col-lg-3 controls">  
+   <small> <%= link_to (image_tag 'logo-large.png') %></small> 
+   
+  </div>
+  
+  <!-- BEGIN Navbar Buttons -->
+  <ul class="nav flaty-nav pull-right">
+    
+    <!-- BEGIN Site Credits -->
+    <li class="hidden-xs"> <a data-toggle="dropdown" class="dropdown-toggle siri" href="#">
+     <%= image_tag("siri.png",:alt => "Siri Innovations",:title => "siriinnovations") %>
+    </a>
+      <!-- BEGIN Tasks Dropdown -->
+      <ul class="dropdown-navbar dropdown-menu hover">
+        <li class="nav-header"> <i class="glyphicon glyphicon-user"></i>Developers</li>
+        <li class="siri-in">
+          <div class="siri-inner">
+            <div class="logo-align"> 
+            <%= image_tag("siri-logo.png",:alt => "Siri Innovations",:title => "siriinnovations") %>
+           </div>
+          </div>
+        </li>
+        <li class="more"><a href="http://www.siriinnovations.com" target="_blank">www.siriinnovations.com</a> </li>
+      </ul>
+      <!-- END Tasks Dropdown --> 
+    </li>
+    <!-- END Site Credits -->
+    <!-- BEGIN Button Tasks -->
+    <li class="hidden-xs"> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="icon-tasks"></i> <span class="badge badge-success"></span> </a> 
+              
+              <!-- BEGIN Tasks Dropdown -->
+              <ul class="dropdown-navbar dropdown-menu">
+                <li class="nav-header"> <i class="icon-ok"></i>Newly Registred Users</li>
+                <li> <a href="#">
+                     <div class="clearfix">
+                       <span class="pull-left"></span><span class="pull-right"></span>   
+                     </div>            
+                    </a> </li>
+      </ul>
+      <!-- END Tasks Dropdown --> 
+    </li>
+    
+    <li class="user-profile"> <a data-toggle="dropdown" 
+    href="#" class="user-menu dropdown-toggle"> <img class="nav-user-photo" 
+    <%= image_tag('avatar2.jpg')%> <span id="user_info">User</span> 
+    <i class="icon-caret-down"></i> </a> 
+      
+      <!-- BEGIN User Dropdown -->
+      <ul class="dropdown-menu dropdown-navbar" id="user_menu">
+        <li class="nav-header"><i class="icon-time"></i> Logged In At <%#= current_admin.current_sign_in_at.localtime.strftime('%H:%M:%S') %> </li>
+        <li><%=link_to "<i class='icon-user'></i>View Profile".html_safe%></li>
+        
+        <li class="divider visible-xs"></li>
+        <li class="visible-xs logo-align"> 
+          <a href="http://www.siriinnovations.com/" target="_blank"> <%#= image_tag("siri.png",:alt => "Siri Innovations",:title => "siriinnovations") %> 
+        </li>
+        
+        <li> 
+         <%=link_to "<i class='icon-off'></i>Logout".html_safe%>
+         </li>
+      </ul>
+      <!-- BEGIN User Dropdown --> 
+    </li>
+    <!-- END Button User -->
+  </ul>
+  <!-- END Navbar Buttons --> 
+</div>
+<!-- END Navbar --> 
+
+<!-- BEGIN Container -->
+<div class="container" id="main-container"> 
+  <!-- BEGIN Sidebar -->
+  <div id="sidebar" class="navbar-collapse collapse"> 
+    <!-- BEGIN Navlist -->
+    <ul class="nav nav-list">
+      <li><%=link_to "<i class='icon-dashboard'></i>Dashboard".html_safe,dashboard_customers_path %></li>
+      <li><%=link_to "<i class='icon-book'></i>Coustomers".html_safe %></li>
+      <li><%=link_to "<i class='icon-list'></i>Merchants".html_safe %></li>
+      <li><%=link_to "<i class='icon-user'></i>Users".html_safe %></li> 
+      
+      <%# if current_admin.role %>
+      <li><%=link_to "<i class='glyphicon glyphicon-import'></i>Admin Users".html_safe  %></li> 
+       <li><%=link_to "<i class='icon-table'></i>Activities".html_safe %></li> 
+      <li><%=link_to "<i class='icon-user'></i>Admin Users".html_safe %></li> 
+      <%# end %>
+      
+      <li> <a href="#" class="dropdown-toggle"><i class="glyphicon glyphicon-facetime-video"></i><span>Video management</span> <b class="arrow icon-angle-right"></b> </a>       
+        <!-- BEGIN Submenu -->
+        <ul class="submenu">
+         
+          <li><%= link_to "Videos Manager"%></li>
+        
+          <li><%= link_to "Trailer Video Settings"%></li>
+          
+        </ul>
+        <!-- END Submenu -->
+      </li>
+    </ul>
+    <!-- END Navlist --> 
+    
+    <!-- BEGIN Sidebar Collapse Button -->
+    <div id="sidebar-collapse" class="visible-lg"> <i class="icon-double-angle-left"></i> </div>
+    <!-- END Sidebar Collapse Button --> 
+  </div>
+  <!-- END Sidebar --> 
+  
+  <!-- BEGIN Content -->
+  <div id="main-content"> 
+    <!-- BEGIN Main Content -->
+     <%= yield %>
+      <!-- END Main Content -->
+    <a id="btn-scrollup" class="btn btn-circle btn-lg" href="#"><i class="icon-chevron-up"></i></a> 
+  </div>
+  <!-- END Content --> 
+</div>
+<!-- END Container --> 
+<!--basic scripts--> 
+</body>
+</html>
+
+
